@@ -1,5 +1,7 @@
 git add -A
 
-git commi -m ""
+git commit -m ""
 
 git push -u origin "project"
+
+git pull origin project

@@ -105,14 +105,14 @@ const的引用是一个赋值的过程，如果给const引用的数换成一个�
     const int &r=c1;	//用于声明引用的const都是底层const
 ```
 
-## 6. 顶层const（top-level const）
+### 6.1 顶层const（top-level const）
 
 
 
 1.  顶层const可以表示任何的对象为常量，对于任意数据类型都适用。
 2.  顶层const不可以改变指向对象
 
-### 6.1 底层const（low-level const）
+### 6.2 底层const（low-level const）
 
 1.  底层const与指针和引用等复合类型有关，
 
