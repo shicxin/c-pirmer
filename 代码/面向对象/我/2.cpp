@@ -40,6 +40,6 @@ int main()
     String s2("Hello");
 
     String* p = new String("hello");
-    cout << s1.get_c_str()
+    // cout << s1.get_c_str()；
     return 0;
 }
