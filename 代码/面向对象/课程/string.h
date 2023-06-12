@@ -1,4 +1,4 @@
-2#ifndef __MYSTRING__
+#ifndef __MYSTRING__
 #define __MYSTRING__
 
 class String
