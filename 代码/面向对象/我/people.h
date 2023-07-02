@@ -11,14 +11,12 @@ private:
     int age;//年龄
     double h, w;//更高，体重
 public:
-    people(const char* nm);//构造函数
-    people(const char* nm, bool x, int ag, double hi, double we);//构造函数
+    people(const char* nm = 0);//构造函数
     people(const people& x);//拷贝构造
-    people& operator=(const people& x);//拷贝赋值
-    people& operator+=(const people& x);//重载运算符
+    people& operator=(const people& x);//重载运算符、拷贝赋值
 
     char* get_name() const { return name;}
-    ~people();
+    // ~people();// 析构函数
 };
 
 inline people::people(const char* nm) : sex(0), h(0), w(0)  
@@ -30,20 +28,7 @@ inline people::people(const char* nm) : sex(0), h(0), w(0)
     else {
         name = new char[sizeof(nm) + 1];
         strcpy(name, nm);
-    }
-}
-
-inline people::people(const char* nm,
-      bool x, int ag, double hi, double we)
-     : sex(x), age(ag), h(hi), w(we)
-{
-    if(nm) {
-        name = new char[1];
-        name[0] = '\0';
-    }
-    else {
-        name = new char[sizeof(nm) + 1];
-        strcpy(name, nm);
+        std::cout << nm;
     }
 }
 
@@ -57,19 +42,6 @@ inline people::people(const people& x)
 inline people& people::operator=(const people& x)
 {
     delete(this->name);
-    this->name = new char[sizeof(x.name + 1)];
-    strcpy(this->name, x.name);
-    this->age = x.age;
-    this->sex = x.sex;
-    this->age = x.age;
-    this->h = x.h;
-    this->w = x.w;
-    return *this;
-}
-
-inline people& people::operator+=(const people& x)
-{
-    people ths();
     this->name = new char[sizeof(x.name + 1)];
     strcpy(this->name, x.name);
     this->age = x.age;
